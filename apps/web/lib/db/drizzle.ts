@@ -10,5 +10,5 @@ dotenv.config();
 const connectionString =
   process.env.POSTGRES_URL || 'postgres://postgres:postgres@localhost:5432/postgres';
 
-export const client = postgres(connectionString);
+export const client = postgres(connectionString.replace(/^['"]|['"]$/g, ''));
 export const db = drizzle(client, { schema });
