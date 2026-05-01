@@ -1,0 +1,7 @@
+{
+  "buildCommand": "pnpm --filter @intelligent-robots/web build",
+  "devCommand": "pnpm --filter @intelligent-robots/web dev",
+  "installCommand": "pnpm install",
+  "framework": "nextjs",
+  "outputDirectory": "apps/web/.next"
+}

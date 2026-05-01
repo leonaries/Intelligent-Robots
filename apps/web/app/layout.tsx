@@ -1,6 +1,5 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Manrope } from 'next/font/google';
 import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { getLocale } from '@/lib/i18n/config';
 import { SWRConfig } from 'swr';
@@ -27,8 +26,6 @@ export const viewport: Viewport = {
   maximumScale: 1
 };
 
-const manrope = Manrope({ subsets: ['latin'] });
-
 export default async function RootLayout({
   children
 }: {
@@ -39,7 +36,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale === 'zh' ? 'zh-CN' : 'en'}
-      className={`bg-theme-bg text-theme-text ${manrope.className}`}
+      className="bg-theme-bg text-theme-text"
     >
       <body className="min-h-[100dvh] bg-theme-bg">
         <SWRConfig
