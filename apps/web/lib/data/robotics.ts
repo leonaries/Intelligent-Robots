@@ -104,6 +104,7 @@ const roboticsContent = {
     ],
     latestSignals: [
       {
+        slug: 'humanoid-production-orders-market-focus',
         title: '人形机器人量产订单成为市场关注焦点',
         category: '行业动态',
         source: '综合信号',
@@ -112,6 +113,7 @@ const roboticsContent = {
         tags: ['人形机器人', '量产', '工业场景']
       },
       {
+        slug: 'vla-generalization-real-robot-tasks',
         title: 'VLA 模型在真实机器人任务中的泛化能力继续升温',
         category: '技术突破',
         source: '论文雷达',
@@ -120,12 +122,115 @@ const roboticsContent = {
         tags: ['VLA', '机器人操作', '具身智能']
       },
       {
+        slug: 'embodied-ai-funding-concentrates-leaders',
         title: '具身智能融资继续向头部企业集中',
         category: '融资快讯',
         source: '投融资库',
         time: '本周',
         summary: '投资机构更关注商业化订单、供应链控制力和核心零部件自研比例。',
         tags: ['融资', '估值', '投资机构']
+      }
+    ],
+    newsItems: [
+      {
+        slug: 'humanoid-production-orders-market-focus',
+        title: '人形机器人量产订单成为市场关注焦点',
+        category: '行业动态',
+        source: '综合信号',
+        time: '今日 12:29',
+        summary: '工业场景和交付能力成为投资人与客户评估人形机器人公司的核心变量。',
+        image:
+          'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85',
+        tags: ['人形机器人', '量产', '工业场景'],
+        companies: ['宇树科技', '智元机器人', 'Figure'],
+        related: ['公司数据库', '投融资数据库', '产业数据'],
+        signalScore: 92,
+        readTime: '4 分钟',
+        takeaways: [
+          '订单和交付节奏正在替代单纯 Demo，成为市场判断人形机器人公司的核心信号。',
+          '工业客户更关注稳定性、维护成本和与现有产线的集成能力。',
+          '具备供应链控制力和真实场景数据闭环的团队更容易获得融资溢价。'
+        ],
+        body: [
+          '人形机器人行业正在从展示能力进入交付能力验证阶段。相比早期强调运动控制、外观形态和公开演示，市场现在更关心是否能形成可复制的工业场景订单。',
+          '对于投资人与产业客户来说，量产订单不仅代表收入预期，也代表硬件可靠性、供应链组织、现场服务和软件迭代机制已经进入更高强度的验证。',
+          '这类信号后续会与公司数据库、融资事件和产业指标联动，帮助判断哪些企业只是拥有技术亮点，哪些企业正在接近商业化拐点。'
+        ]
+      },
+      {
+        slug: 'vla-generalization-real-robot-tasks',
+        title: 'VLA 模型在真实机器人任务中的泛化能力继续升温',
+        category: '技术突破',
+        source: '论文雷达',
+        time: '今日 11:54',
+        summary: '多任务操作、跨平台数据和真实环境泛化仍是技术路线讨论的重点。',
+        image:
+          'https://images.unsplash.com/photo-1535378620166-273708d44e4c?auto=format&fit=crop&w=1200&q=85',
+        tags: ['VLA', '机器人操作', '具身智能'],
+        companies: ['Figure', '智元机器人'],
+        related: ['技术论文', '资源导航'],
+        signalScore: 88,
+        readTime: '5 分钟',
+        takeaways: [
+          'VLA 的竞争焦点正在从单任务效果转向跨任务、跨平台和真实环境泛化。',
+          '数据来源、数据质量和机器人本体差异会直接影响模型迁移能力。',
+          '开源模型和数据集会降低研究门槛，但商业落地仍依赖工程闭环。'
+        ],
+        body: [
+          'VLA 模型正在成为机器人操作方向最重要的技术叙事之一。它把视觉、语言和动作建模连接起来，希望让机器人能更自然地理解任务并执行操作。',
+          '近期讨论的重点不再只是模型参数量，而是训练数据是否覆盖足够多的真实任务、机器人平台和环境扰动。真实世界泛化能力会决定模型能否从实验室进入工厂、仓储和服务场景。',
+          '对于产业智库来说，VLA 相关论文需要与开源项目、数据集、公司产品路线和融资事件放在一起看，才能判断技术热度是否真正转化为产业能力。'
+        ]
+      },
+      {
+        slug: 'embodied-ai-funding-concentrates-leaders',
+        title: '具身智能融资继续向头部企业集中',
+        category: '融资快讯',
+        source: '投融资库',
+        time: '本周',
+        summary: '投资机构更关注商业化订单、供应链控制力和核心零部件自研比例。',
+        image:
+          'https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?auto=format&fit=crop&w=1200&q=85',
+        tags: ['融资', '估值', '投资机构'],
+        companies: ['银河通用', '星动纪元', '宇树科技'],
+        related: ['投融资数据库', '公司数据库'],
+        signalScore: 84,
+        readTime: '3 分钟',
+        takeaways: [
+          '融资正在从概念驱动转向交付能力、客户订单和供应链能力驱动。',
+          '头部团队更容易获得产业资本与战略投资方支持。',
+          '估值分化会进一步放大公司数据库和融资数据库的关联价值。'
+        ],
+        body: [
+          '具身智能融资热度仍在延续，但资金分布开始更明显地向头部公司集中。投资机构不再只看技术故事，而是更重视客户订单、成本结构和团队的工程组织能力。',
+          '在硬件密集型赛道中，供应链控制力和关键零部件自研比例会影响毛利、交付稳定性和长期竞争壁垒。',
+          '后续融资事件需要与公司阶段、产品路线和新闻信号一起追踪，才能形成可用的产业判断。'
+        ]
+      },
+      {
+        slug: 'actuator-supply-chain-cost-curve',
+        title: '执行器供应链进入成本曲线观察窗口',
+        category: '供应链',
+        source: '产业数据',
+        time: '昨日',
+        summary: '关节模组、减速器、力矩传感器和控制器成本变化，正在影响整机商业化节奏。',
+        image:
+          'https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=1200&q=85',
+        tags: ['执行器', '供应链', '成本'],
+        companies: ['宇树科技', '傅利叶智能'],
+        related: ['产业数据', '资源导航'],
+        signalScore: 79,
+        readTime: '4 分钟',
+        takeaways: [
+          '执行器成本下降会直接影响人形机器人整机价格带。',
+          '核心零部件自研与外采之间的权衡会影响交付速度和毛利。',
+          '供应链企业可能成为产业数据库中最值得持续跟踪的隐藏层。'
+        ],
+        body: [
+          '机器人整机价格下降并不只取决于规模化生产，也取决于执行器、减速器、传感器和控制器等关键部件的成本曲线。',
+          '当行业进入订单验证阶段，供应链稳定性会变成客户采购决策的一部分。谁能更好地控制核心零部件，谁就更容易在交付周期、维护成本和产品迭代上形成优势。',
+          '因此，产业智库不应只追踪整机公司，也需要逐步建立零部件和供应链导航层。'
+        ]
       }
     ],
     hotTerms: [
@@ -295,6 +400,12 @@ const roboticsContent = {
       comingSoon: '即将开放',
       startUsing: '开始使用',
       readFullArticle: '阅读全文',
+      viewSignal: '查看信号',
+      signalScore: '信号强度',
+      relatedCompanies: '关联公司',
+      relatedModules: '关联模块',
+      keyTakeaways: '关键信息',
+      crawlerReady: '可接入采集',
       newsImageAlt: '机器人产业资讯配图'
     },
     pages: {
@@ -447,6 +558,7 @@ const roboticsContent = {
     ],
     latestSignals: [
       {
+        slug: 'humanoid-production-orders-market-focus',
         title: 'Humanoid robot production orders become a market focus',
         category: 'Market',
         source: 'Signal Feed',
@@ -455,6 +567,7 @@ const roboticsContent = {
         tags: ['Humanoid', 'Production', 'Industrial']
       },
       {
+        slug: 'vla-generalization-real-robot-tasks',
         title: 'VLA generalization in real robot tasks keeps heating up',
         category: 'Research',
         source: 'Paper Radar',
@@ -463,12 +576,119 @@ const roboticsContent = {
         tags: ['VLA', 'Manipulation', 'Embodied AI']
       },
       {
+        slug: 'embodied-ai-funding-concentrates-leaders',
         title: 'Embodied AI funding continues to concentrate among leaders',
         category: 'Funding',
         source: 'Funding Intel',
         time: 'This week',
         summary: 'Investors are looking harder at commercial orders, supply-chain control, and core component ownership.',
         tags: ['Funding', 'Valuation', 'Investors']
+      }
+    ],
+    newsItems: [
+      {
+        slug: 'humanoid-production-orders-market-focus',
+        title: 'Humanoid robot production orders become a market focus',
+        category: 'Market',
+        source: 'Signal Feed',
+        time: 'Today 12:29',
+        summary:
+          'Industrial deployments and delivery capability are becoming key variables for investors and customers.',
+        image:
+          'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=85',
+        tags: ['Humanoid', 'Production', 'Industrial'],
+        companies: ['Unitree Robotics', 'Agibot', 'Figure AI'],
+        related: ['Company Database', 'Funding Database', 'Industry Data'],
+        signalScore: 92,
+        readTime: '4 min read',
+        takeaways: [
+          'Orders and delivery cadence are replacing demos as the core signal for humanoid robotics companies.',
+          'Industrial customers care more about reliability, maintenance cost, and integration with existing lines.',
+          'Teams with supply-chain control and real-world data loops are more likely to receive valuation premiums.'
+        ],
+        body: [
+          'The humanoid robotics market is moving from capability demonstrations to delivery validation. Instead of focusing only on locomotion, appearance, and public demos, the market is watching whether companies can generate repeatable industrial orders.',
+          'For investors and industrial customers, production orders represent more than revenue potential. They signal that hardware reliability, supply-chain organization, field service, and software iteration are entering a more demanding phase.',
+          'These signals should be connected with company profiles, funding events, and market indicators to understand which teams are close to commercial inflection points.'
+        ]
+      },
+      {
+        slug: 'vla-generalization-real-robot-tasks',
+        title: 'VLA generalization in real robot tasks keeps heating up',
+        category: 'Research',
+        source: 'Paper Radar',
+        time: 'Today 11:54',
+        summary:
+          'Multi-task manipulation, cross-platform data, and real-world generalization remain central debates.',
+        image:
+          'https://images.unsplash.com/photo-1535378620166-273708d44e4c?auto=format&fit=crop&w=1200&q=85',
+        tags: ['VLA', 'Manipulation', 'Embodied AI'],
+        companies: ['Figure AI', 'Agibot'],
+        related: ['Technical Papers', 'Resource Map'],
+        signalScore: 88,
+        readTime: '5 min read',
+        takeaways: [
+          'VLA competition is shifting from single-task performance to cross-task, cross-platform, real-world generalization.',
+          'Data source, data quality, and embodiment differences directly shape transfer capability.',
+          'Open models and datasets lower research barriers, while commercial deployment still depends on engineering loops.'
+        ],
+        body: [
+          'VLA models are becoming one of the most important technical narratives in robot manipulation. They connect vision, language, and action modeling so robots can interpret tasks and execute operations more naturally.',
+          'Recent debate is less about parameter count alone and more about whether training data covers enough real tasks, robot platforms, and environmental variation. Real-world generalization will determine whether models can move from labs into factories, warehouses, and service scenarios.',
+          'For an industry intelligence platform, VLA papers should be viewed together with open-source projects, datasets, company roadmaps, and funding events.'
+        ]
+      },
+      {
+        slug: 'embodied-ai-funding-concentrates-leaders',
+        title: 'Embodied AI funding continues to concentrate among leaders',
+        category: 'Funding',
+        source: 'Funding Intel',
+        time: 'This week',
+        summary:
+          'Investors are looking harder at commercial orders, supply-chain control, and core component ownership.',
+        image:
+          'https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?auto=format&fit=crop&w=1200&q=85',
+        tags: ['Funding', 'Valuation', 'Investors'],
+        companies: ['Galaxea AI', 'RobotEra', 'Unitree Robotics'],
+        related: ['Funding Database', 'Company Database'],
+        signalScore: 84,
+        readTime: '3 min read',
+        takeaways: [
+          'Funding is shifting from concept-driven narratives toward delivery capability, customer orders, and supply-chain strength.',
+          'Leading teams are more likely to attract industrial capital and strategic investors.',
+          'Valuation divergence increases the value of linking company records with funding history.'
+        ],
+        body: [
+          'Embodied AI funding remains active, but capital is increasingly concentrating among leading companies. Investors are looking beyond the technical story and paying closer attention to customer orders, cost structure, and engineering organization.',
+          'In hardware-intensive categories, supply-chain control and ownership of key components influence margin, delivery stability, and long-term defensibility.',
+          'Future funding events should be tracked alongside company stage, product roadmap, and news signals to support stronger industry judgment.'
+        ]
+      },
+      {
+        slug: 'actuator-supply-chain-cost-curve',
+        title: 'Actuator supply chains enter the cost-curve watch window',
+        category: 'Supply Chain',
+        source: 'Industry Data',
+        time: 'Yesterday',
+        summary:
+          'Cost shifts in joint modules, reducers, torque sensors, and controllers are shaping commercialization timelines.',
+        image:
+          'https://images.unsplash.com/photo-1561144257-e32e8efc6c4f?auto=format&fit=crop&w=1200&q=85',
+        tags: ['Actuators', 'Supply Chain', 'Cost'],
+        companies: ['Unitree Robotics', 'Fourier Intelligence'],
+        related: ['Industry Data', 'Resource Map'],
+        signalScore: 79,
+        readTime: '4 min read',
+        takeaways: [
+          'Actuator cost reduction directly affects humanoid robot price bands.',
+          'The trade-off between in-house components and external suppliers affects delivery speed and margin.',
+          'Supply-chain companies may become one of the most important hidden layers in the industry database.'
+        ],
+        body: [
+          'Robot price reductions depend not only on production scale but also on the cost curve of actuators, reducers, sensors, and controllers.',
+          'As the industry enters order validation, supply-chain stability becomes part of customer procurement decisions. Companies that control key components can gain advantages in delivery cycles, maintenance cost, and product iteration.',
+          'An industry intelligence platform should therefore track not only robot makers but also the component and supply-chain layer.'
+        ]
       }
     ],
     hotTerms: [
@@ -638,6 +858,12 @@ const roboticsContent = {
       comingSoon: 'Coming soon',
       startUsing: 'Start',
       readFullArticle: 'Read the full article',
+      viewSignal: 'View signal',
+      signalScore: 'Signal score',
+      relatedCompanies: 'Related companies',
+      relatedModules: 'Related modules',
+      keyTakeaways: 'Key takeaways',
+      crawlerReady: 'Crawler-ready',
       newsImageAlt: 'Robotics industry news image'
     },
     pages: {

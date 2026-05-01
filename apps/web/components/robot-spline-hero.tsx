@@ -18,7 +18,6 @@ type NavigatorWithConnection = Navigator & {
 
 type RobotSplineHeroProps = {
   className?: string;
-  eyebrow: string;
   title: string;
   meta: string;
   fallbackAlt: string;
@@ -26,7 +25,6 @@ type RobotSplineHeroProps = {
 
 export function RobotSplineHero({
   className,
-  eyebrow,
   title,
   meta,
   fallbackAlt
@@ -130,9 +128,6 @@ export function RobotSplineHero({
         </div>
       ) : null}
 
-      <div className="absolute left-4 top-4 rounded-md border border-theme-border bg-theme-panel-strong px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-theme-text-soft">
-        {eyebrow}
-      </div>
       <div className="absolute bottom-4 left-4 right-4 rounded-md border border-theme-border-strong bg-theme-panel-strong p-3 shadow-[0_0_34px_color-mix(in_srgb,var(--theme-accent)_12%,transparent)] backdrop-blur lg:bottom-6 lg:left-6 lg:right-6">
         <div className="flex items-center justify-between gap-3">
           <div>

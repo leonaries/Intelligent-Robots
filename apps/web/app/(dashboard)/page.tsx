@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { HotTerms } from '@/components/hot-terms';
 import { ModuleCard } from '@/components/module-card';
@@ -38,24 +35,6 @@ export default async function HomePage() {
                       {home.description}
                     </p>
                   </div>
-                  <div className="flex flex-col gap-3 sm:flex-row">
-                    <Button
-                      asChild
-                      className="rounded-full bg-theme-accent text-theme-accent-foreground hover:bg-theme-accent/85"
-                    >
-                      <Link href="/resources">
-                        {home.primaryCta}
-                        <ArrowRight className="size-4" />
-                      </Link>
-                    </Button>
-                    <Button
-                      asChild
-                      variant="outline"
-                      className="rounded-full border-theme-border bg-theme-panel text-theme-text hover:bg-theme-panel/80"
-                    >
-                      <Link href="/news">{home.secondaryCta}</Link>
-                    </Button>
-                  </div>
                   <div className="grid gap-2 rounded-lg border border-theme-border bg-theme-panel-strong p-3 sm:grid-cols-3">
                     {content.searchHints.map((hint) => (
                       <div
@@ -69,7 +48,6 @@ export default async function HomePage() {
                   </div>
                 </div>
                 <RobotSplineHero
-                  eyebrow={home.robotEyebrow}
                   title={home.robotTitle}
                   meta={home.robotMeta}
                   fallbackAlt={home.robotFallbackAlt}

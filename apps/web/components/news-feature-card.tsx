@@ -3,11 +3,15 @@ import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type NewsSignal = {
+  slug?: string;
   title: string;
   category: string;
   source: string;
   time: string;
   summary: string;
+  image?: string;
+  signalScore?: number;
+  readTime?: string;
   tags?: string[];
 };
 
@@ -30,6 +34,8 @@ export function NewsFeatureCard({
   variant = 'compact'
 }: NewsFeatureCardProps) {
   const isFeatured = variant === 'featured';
+  const image = signal.image ?? featureImage;
+  const articleHref = href === '#' && signal.slug ? `/news/${signal.slug}` : href;
 
   return (
     <article
@@ -43,7 +49,7 @@ export function NewsFeatureCard({
       {isFeatured ? (
         <div className="relative min-h-[220px] overflow-hidden bg-theme-bg lg:min-h-full">
           <img
-            src={featureImage}
+            src={image}
             alt={imageAlt}
             className="h-full w-full object-cover opacity-70 grayscale-[20%] transition duration-500 group-hover:scale-[1.03] group-hover:opacity-85"
           />
@@ -63,7 +69,9 @@ export function NewsFeatureCard({
             <span className="rounded-full bg-theme-accent px-3 py-1 text-theme-accent-foreground">
               {signal.category}
             </span>
+            <span>{signal.source}</span>
             <span>{signal.time}</span>
+            {signal.readTime ? <span>{signal.readTime}</span> : null}
           </div>
           <h3
             className={cn(
@@ -85,6 +93,11 @@ export function NewsFeatureCard({
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-2">
+            {typeof signal.signalScore === 'number' ? (
+              <span className="rounded-full border border-theme-border-strong bg-theme-accent-soft px-2.5 py-1 text-xs font-semibold text-theme-accent">
+                {signal.signalScore}
+              </span>
+            ) : null}
             {(signal.tags ?? [signal.source]).slice(0, 3).map((tag) => (
               <span
                 key={tag}
@@ -95,7 +108,7 @@ export function NewsFeatureCard({
             ))}
           </div>
           <Link
-            href={href}
+            href={articleHref}
             className="inline-flex items-center gap-2 rounded-full bg-theme-text px-4 py-2 text-sm font-semibold text-theme-accent-foreground transition hover:bg-theme-accent/85"
           >
             {actionLabel}
