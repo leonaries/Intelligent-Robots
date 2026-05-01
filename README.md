@@ -33,7 +33,7 @@ pnpm install
 pnpm dev
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3050.
 
 ## Database
 
@@ -42,7 +42,7 @@ Create `.env` from `.env.example`, then set:
 ```bash
 POSTGRES_URL=postgresql://...
 AUTH_SECRET=...
-BASE_URL=http://localhost:3000
+BASE_URL=http://localhost:3050
 ```
 
 Generate and run migrations:

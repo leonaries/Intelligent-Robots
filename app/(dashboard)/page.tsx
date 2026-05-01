@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRight, Search, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -73,11 +72,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="relative min-h-[260px] border-t border-white/10 lg:border-l lg:border-t-0">
-                  <Image
+                  <img
                     src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=85"
                     alt="机器人与未来科技场景"
-                    fill
-                    priority
                     className="object-cover opacity-80 grayscale-[15%]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#07090b] via-transparent to-transparent" />
