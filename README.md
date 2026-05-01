@@ -2,6 +2,16 @@
 
 Robotics Intelligence Platform 是一个基于 Next.js SaaS Starter 改造的机器人产业导航与智库入口。
 
+## Monorepo Structure
+
+```txt
+apps/
+  web/      Next.js 站点，默认端口 3050
+  api/      Nest.js 业务 API 骨架，默认端口 3051
+  crawler/  Python 新闻采集与内容处理 worker 骨架
+packages/  预留共享包目录
+```
+
 ## 当前版本
 
 - 首页：机器人产业导航 + 智库模块入口
@@ -18,6 +28,8 @@ Robotics Intelligence Platform 是一个基于 Next.js SaaS Starter 改造的机
 ## Tech Stack
 
 - Next.js App Router
+- Nest.js API scaffold
+- Python crawler scaffold
 - React
 - Tailwind CSS v4
 - shadcn/ui style components
@@ -34,6 +46,14 @@ pnpm dev
 ```
 
 Open http://localhost:3050.
+
+Run services individually:
+
+```bash
+pnpm dev:web
+pnpm dev:api
+pnpm crawler:check
+```
 
 ## Database
 

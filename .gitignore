@@ -2,19 +2,25 @@
 
 # dependencies
 /node_modules
+**/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
 
 # testing
 /coverage
+**/coverage
 
 # next.js
 /.next/
+**/.next/
 /out/
+**/out/
 
 # production
 /build
+**/build
+**/dist
 
 # misc
 .DS_Store
@@ -38,7 +44,16 @@ next-env.d.ts
 
 # Docker
 postgres_data/
+docker-compose.yml
 .env*.local
 .superpowers/
 .env.*
 !.env.example
+
+# Python
+.venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+.ruff_cache/
+**/.ruff_cache/
