@@ -6,7 +6,11 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      next:
+        specifier: 15.6.0-canary.59
+        version: 15.6.0-canary.59(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
   apps/api:
     dependencies:
@@ -5433,7 +5437,7 @@ snapshots:
   gel@2.1.0:
     dependencies:
       '@petamoriken/float16': 3.9.2
-      debug: 4.4.1
+      debug: 4.4.3
       env-paths: 3.0.0
       semver: 7.7.3
       shell-quote: 1.8.2
@@ -5695,7 +5699,7 @@ snapshots:
     dependencies:
       '@next/env': 15.6.0-canary.59
       '@swc/helpers': 0.5.15
-      caniuse-lite: 1.0.30001718
+      caniuse-lite: 1.0.30001791
       postcss: 8.4.31
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)

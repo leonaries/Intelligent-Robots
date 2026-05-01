@@ -21,5 +21,8 @@
     "db:migrate": "pnpm --filter @intelligent-robots/web db:migrate",
     "db:studio": "pnpm --filter @intelligent-robots/web db:studio",
     "crawler:check": "python -m compileall apps/crawler/src"
+  },
+  "devDependencies": {
+    "next": "15.6.0-canary.59"
   }
 }
