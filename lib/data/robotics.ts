@@ -13,7 +13,6 @@ import {
   Newspaper,
   Radio,
   Search,
-  Sparkles,
   Wrench
 } from 'lucide-react';
 import type { Locale } from '@/lib/i18n/settings';
@@ -23,7 +22,6 @@ const roboticsContent = {
     brand: '机器人产业智库',
     tagline: 'Robotics Intelligence Platform',
     header: {
-      ai: 'AI 助手',
       dashboard: '控制台'
     },
     navItems: [
@@ -33,8 +31,7 @@ const roboticsContent = {
       { label: '投融资', href: '/funding' },
       { label: '技术论文', href: '/papers' },
       { label: '产业数据', href: '/data' },
-      { label: '资源导航', href: '/resources' },
-      { label: 'AI 助手', href: '/ai' }
+      { label: '资源导航', href: '/resources' }
     ],
     home: {
       badge: 'Robotics Intelligence Infrastructure',
@@ -50,7 +47,6 @@ const roboticsContent = {
       moduleAction: '进入模块',
       latestTitle: '最新行业资讯',
       hotTermsTitle: '本周热词',
-      aiPreviewTitle: 'AI 助手预览',
       robotEyebrow: 'Embodied AI Map',
       robotTitle: 'Robotics Watch',
       robotMeta: 'Companies · Funding · Papers · Signals'
@@ -103,13 +99,6 @@ const roboticsContent = {
         href: '/resources',
         meta: 'Resource Map',
         icon: Network
-      },
-      {
-        title: 'AI 助手',
-        description: '基于智库数据进行企业对比、趋势总结、融资分析和研究问答。',
-        href: '/ai',
-        meta: 'Research Copilot',
-        icon: BrainCircuit
       }
     ],
     latestSignals: [
@@ -286,24 +275,9 @@ const roboticsContent = {
         tags: ['conference', 'research']
       }
     ],
-    assistantPrompts: [
-      {
-        prompt: '对比宇树科技和智元机器人的技术路线',
-        answer: '宇树科技更强调高性价比硬件量产和运动控制积累，智元机器人更强调通用人形产品矩阵、场景拓展和生态合作。'
-      },
-      {
-        prompt: '总结最近一个月人形机器人融资变化',
-        answer: '融资继续向头部集中，投资人关注点从概念热度转向订单、交付能力、供应链自研和数据闭环。'
-      },
-      {
-        prompt: '目前人形机器人量产最大的挑战是什么',
-        answer: '核心挑战包括可靠性、执行器成本、灵巧操作泛化、真实数据规模和可验证的商业场景。'
-      }
-    ],
     searchHints: [
       { label: 'Search companies', icon: Search },
-      { label: 'Track funding', icon: Activity },
-      { label: 'Ask AI assistant', icon: Sparkles }
+      { label: 'Track funding', icon: Activity }
     ],
     labels: {
       location: '地区',
@@ -361,14 +335,6 @@ const roboticsContent = {
         title: '产业数据',
         description: '第一版展示关键指标预览，后续扩展为出货量、成本结构、政策地图、零部件价格和市场规模看板。'
       },
-      ai: {
-        eyebrow: 'Research Copilot',
-        title: 'AI 助手',
-        description: 'v1 先展示静态研究问答样例。后续可接入真实模型，并基于公司、融资、论文、资讯和资源库回答问题。',
-        assistantTitle: '机器人产业研究助手',
-        assistantSubtitle: '基于智库数据生成分析',
-        inputPlaceholder: 'Ask about companies, funding, papers, or robotics trends...'
-      },
       pricing: {
         eyebrow: 'Plans',
         title: '会员能力规划',
@@ -380,7 +346,7 @@ const roboticsContent = {
         name: 'Research',
         price: 'Free',
         description: '适合早期浏览产业导航、资讯和公开数据库。',
-        features: ['公开行业资讯', '资源导航', '公司/论文/融资预览', 'AI 助手示例问题']
+        features: ['公开行业资讯', '资源导航', '公司/论文/融资预览', '研究工作流预览']
       },
       {
         name: 'Intelligence',
@@ -394,7 +360,6 @@ const roboticsContent = {
     brand: 'Robotics Intelligence',
     tagline: 'Industrial Knowledge Platform',
     header: {
-      ai: 'AI Copilot',
       dashboard: 'Dashboard'
     },
     navItems: [
@@ -404,8 +369,7 @@ const roboticsContent = {
       { label: 'Funding', href: '/funding' },
       { label: 'Papers', href: '/papers' },
       { label: 'Data', href: '/data' },
-      { label: 'Resources', href: '/resources' },
-      { label: 'AI Copilot', href: '/ai' }
+      { label: 'Resources', href: '/resources' }
     ],
     home: {
       badge: 'Robotics Intelligence Infrastructure',
@@ -421,7 +385,6 @@ const roboticsContent = {
       moduleAction: 'Open module',
       latestTitle: 'Latest Signals',
       hotTermsTitle: 'Hot Terms',
-      aiPreviewTitle: 'AI Copilot Preview',
       robotEyebrow: 'Embodied AI Map',
       robotTitle: 'Robotics Watch',
       robotMeta: 'Companies · Funding · Papers · Signals'
@@ -474,13 +437,6 @@ const roboticsContent = {
         href: '/resources',
         meta: 'Resource Map',
         icon: Network
-      },
-      {
-        title: 'AI Copilot',
-        description: 'Use the knowledge base for company comparison, trend summaries, funding analysis, and research Q&A.',
-        href: '/ai',
-        meta: 'Research Copilot',
-        icon: BrainCircuit
       }
     ],
     latestSignals: [
@@ -657,24 +613,9 @@ const roboticsContent = {
         tags: ['conference', 'research']
       }
     ],
-    assistantPrompts: [
-      {
-        prompt: 'Compare the technical roadmaps of Unitree and Agibot',
-        answer: 'Unitree emphasizes cost-effective hardware production and motion control depth, while Agibot emphasizes a broader humanoid product matrix, scenario expansion, and ecosystem partnerships.'
-      },
-      {
-        prompt: 'Summarize humanoid robotics funding over the past month',
-        answer: 'Capital keeps concentrating in leaders, and investors are shifting from hype toward orders, delivery capability, supply-chain ownership, and data loops.'
-      },
-      {
-        prompt: 'What is the biggest bottleneck for humanoid mass production?',
-        answer: 'Key challenges include reliability, actuator cost, dexterous manipulation generalization, real-world data scale, and verifiable commercial scenarios.'
-      }
-    ],
     searchHints: [
       { label: 'Search companies', icon: Search },
-      { label: 'Track funding', icon: Activity },
-      { label: 'Ask AI copilot', icon: Sparkles }
+      { label: 'Track funding', icon: Activity }
     ],
     labels: {
       location: 'Location',
@@ -732,14 +673,6 @@ const roboticsContent = {
         title: 'Industry Data',
         description: 'A preview of key indicators, later expanding into shipments, cost structures, policy maps, component prices, and market dashboards.'
       },
-      ai: {
-        eyebrow: 'Research Copilot',
-        title: 'AI Copilot',
-        description: 'v1 shows static research Q&A examples. Later it can connect to real models grounded in companies, funding, papers, news, and resources.',
-        assistantTitle: 'Robotics Research Copilot',
-        assistantSubtitle: 'Analysis generated from intelligence data',
-        inputPlaceholder: 'Ask about companies, funding, papers, or robotics trends...'
-      },
       pricing: {
         eyebrow: 'Plans',
         title: 'Membership Roadmap',
@@ -751,7 +684,7 @@ const roboticsContent = {
         name: 'Research',
         price: 'Free',
         description: 'For early browsing of resource maps, news, and public databases.',
-        features: ['Public industry news', 'Resource map', 'Company/paper/funding previews', 'AI copilot sample questions']
+        features: ['Public industry news', 'Resource map', 'Company/paper/funding previews', 'Research workflow previews']
       },
       {
         name: 'Intelligence',

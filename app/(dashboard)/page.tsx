@@ -1,12 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, Search, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { HotTerms } from '@/components/hot-terms';
 import { ModuleCard } from '@/components/module-card';
 import { PageShell } from '@/components/page-shell';
@@ -126,25 +121,6 @@ export default async function HomePage() {
               signals={content.latestSignals}
             />
             <HotTerms title={home.hotTermsTitle} terms={content.hotTerms} />
-            <Card className="border-white/10 bg-gradient-to-br from-cyan-200/10 to-amber-200/10 py-0 shadow-none">
-              <CardHeader className="px-5 pt-5">
-                <CardTitle className="flex items-center gap-2 text-base text-white">
-                  <Sparkles className="size-4 text-cyan-200" />
-                  {home.aiPreviewTitle}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col gap-3 px-5 pb-5">
-                {content.assistantPrompts.slice(0, 2).map((item) => (
-                  <Link
-                    key={item.prompt}
-                    href="/ai"
-                    className="rounded-lg border border-white/10 bg-slate-950/50 p-3 text-sm leading-6 text-slate-300 transition hover:border-cyan-200/40"
-                  >
-                    {item.prompt}
-                  </Link>
-                ))}
-              </CardContent>
-            </Card>
           </aside>
         </section>
       </main>

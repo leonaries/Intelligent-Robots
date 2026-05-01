@@ -42,13 +42,6 @@ export async function PublicHeader() {
         <div className="flex items-center gap-2">
           <LivePresence locale={locale} />
           <LanguageSwitcher locale={locale} />
-          <Button
-            asChild
-            variant="outline"
-            className="hidden rounded-full border-white/15 bg-white/5 text-white hover:bg-white/10 sm:inline-flex"
-          >
-            <Link href="/ai">{content.header.ai}</Link>
-          </Button>
           <Button asChild className="rounded-full bg-cyan-200 text-slate-950 hover:bg-cyan-100">
             <Link href="/dashboard">
               <LayoutDashboard className="size-4" />
