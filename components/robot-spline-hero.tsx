@@ -125,7 +125,7 @@ export function RobotSplineHero({
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07090b] to-transparent" />
 
       {shouldRenderScene === true ? (
-        <div className="absolute inset-x-0 -top-10 bottom-0 translate-x-6 scale-[1.08] opacity-95 xl:-top-14 xl:translate-x-8 xl:scale-[1.14]">
+        <div className="absolute inset-x-0 top-4 bottom-3 translate-x-6 scale-[1.01] opacity-95 xl:top-5 xl:bottom-4 xl:translate-x-8 xl:scale-[1.04]">
           <SplineScene scene={ROBOTICS_SCENE} />
         </div>
       ) : null}
