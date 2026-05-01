@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Bot, LayoutDashboard } from 'lucide-react';
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { LivePresence } from '@/components/live-presence';
 import { Button } from '@/components/ui/button';
 import { getRoboticsContent } from '@/lib/data/robotics';
 import { getLocale } from '@/lib/i18n/config';
@@ -39,6 +40,7 @@ export async function PublicHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LivePresence locale={locale} />
           <LanguageSwitcher locale={locale} />
           <Button
             asChild

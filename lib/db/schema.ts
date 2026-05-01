@@ -6,6 +6,8 @@ import {
   timestamp,
   integer,
   jsonb,
+  primaryKey,
+  index,
 } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
@@ -167,6 +169,24 @@ export const industryMetrics = pgTable('industry_metrics', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
 });
 
+export const visitorPresence = pgTable(
+  'visitor_presence',
+  {
+    visitorId: varchar('visitor_id', { length: 64 }).notNull(),
+    pathname: varchar('pathname', { length: 240 }).notNull(),
+    lastSeenAt: timestamp('last_seen_at').notNull().defaultNow(),
+    createdAt: timestamp('created_at').notNull().defaultNow(),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.visitorId, table.pathname] }),
+    lastSeenAtIdx: index('visitor_presence_last_seen_at_idx').on(
+      table.lastSeenAt
+    ),
+    pathnameLastSeenAtIdx: index('visitor_presence_pathname_last_seen_at_idx')
+      .on(table.pathname, table.lastSeenAt),
+  })
+);
+
 export const teamsRelations = relations(teams, ({ many }) => ({
   teamMembers: many(teamMembers),
   activityLogs: many(activityLogs),
@@ -251,6 +271,8 @@ export type Resource = typeof resources.$inferSelect;
 export type NewResource = typeof resources.$inferInsert;
 export type IndustryMetric = typeof industryMetrics.$inferSelect;
 export type NewIndustryMetric = typeof industryMetrics.$inferInsert;
+export type VisitorPresence = typeof visitorPresence.$inferSelect;
+export type NewVisitorPresence = typeof visitorPresence.$inferInsert;
 export type TeamDataWithMembers = Team & {
   teamMembers: (TeamMember & {
     user: Pick<User, 'id' | 'name' | 'email'>;
