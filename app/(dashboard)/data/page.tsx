@@ -1,18 +1,23 @@
 import { PageShell } from '@/components/page-shell';
 import { SectionHeading } from '@/components/section-heading';
-import { metrics } from '@/lib/data/robotics';
+import { getRoboticsContent } from '@/lib/data/robotics';
+import { getLocale } from '@/lib/i18n/config';
 
-export default function DataPage() {
+export default async function DataPage() {
+  const locale = await getLocale();
+  const content = getRoboticsContent(locale);
+  const page = content.pages.data;
+
   return (
     <PageShell>
       <main className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Market Data"
-          title="产业数据"
-          description="第一版展示关键指标预览，后续扩展为出货量、成本结构、政策地图、零部件价格和市场规模看板。"
+          eyebrow={page.eyebrow}
+          title={page.title}
+          description={page.description}
         />
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {metrics.map((metric) => (
+          {content.metrics.map((metric) => (
             <article
               key={metric.name}
               className="rounded-lg border border-white/10 bg-white/[0.04] p-5"

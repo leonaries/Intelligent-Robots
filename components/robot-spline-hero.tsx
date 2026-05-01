@@ -15,9 +15,17 @@ type NavigatorWithConnection = Navigator & {
 
 type RobotSplineHeroProps = {
   className?: string;
+  eyebrow: string;
+  title: string;
+  meta: string;
 };
 
-export function RobotSplineHero({ className }: RobotSplineHeroProps) {
+export function RobotSplineHero({
+  className,
+  eyebrow,
+  title,
+  meta
+}: RobotSplineHeroProps) {
   const [shouldRenderScene, setShouldRenderScene] = useState(false);
 
   useEffect(() => {
@@ -58,16 +66,16 @@ export function RobotSplineHero({ className }: RobotSplineHeroProps) {
       ) : null}
 
       <div className="absolute left-4 top-4 rounded-md border border-white/10 bg-slate-950/60 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-300">
-        Embodied AI Map
+        {eyebrow}
       </div>
       <div className="absolute bottom-4 left-4 right-4 rounded-md border border-cyan-200/25 bg-slate-950/70 p-3 shadow-[0_0_34px_rgba(34,211,238,0.12)] backdrop-blur">
         <div className="flex items-center justify-between gap-3">
           <div>
             <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100">
-              Robotics Watch
+              {title}
             </div>
             <div className="mt-1 text-sm text-slate-300">
-              Companies · Funding · Papers · Signals
+              {meta}
             </div>
           </div>
           <div className="grid size-11 place-items-center rounded-full border border-cyan-200/25 bg-cyan-200/10">

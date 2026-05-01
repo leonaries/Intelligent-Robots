@@ -13,14 +13,14 @@ import { PageShell } from '@/components/page-shell';
 import { RobotSplineHero } from '@/components/robot-spline-hero';
 import { SectionHeading } from '@/components/section-heading';
 import { SignalList } from '@/components/signal-list';
-import {
-  assistantPrompts,
-  platformModules,
-  platformStats,
-  searchHints
-} from '@/lib/data/robotics';
+import { getRoboticsContent } from '@/lib/data/robotics';
+import { getLocale } from '@/lib/i18n/config';
 
-export default function HomePage() {
+export default async function HomePage() {
+  const locale = await getLocale();
+  const content = getRoboticsContent(locale);
+  const { home } = content;
+
   return (
     <PageShell>
       <main>
@@ -31,17 +31,16 @@ export default function HomePage() {
                 <div className="flex flex-col justify-center gap-6 p-6 sm:p-8 lg:p-9 xl:p-10">
                   <div className="flex w-fit items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-200/10 px-3 py-1 text-xs font-medium text-cyan-100">
                     <span className="size-1.5 rounded-full bg-cyan-200 shadow-[0_0_18px_rgba(103,232,249,0.8)]" />
-                    Robotics Intelligence Infrastructure
+                    {home.badge}
                   </div>
                   <div className="flex flex-col gap-4">
                     <h1 className="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[48px] xl:text-[52px]">
-                      机器人产业智库
+                      {home.title[0]}
                       <br />
-                      导航入口
+                      {home.title[1]}
                     </h1>
                     <p className="max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
-                      汇聚全球机器人行业资讯、企业档案、投融资事件、技术论文、产业指标和资源导航，
-                      帮助创业者、投资人和工程师快速进入产业地图。
+                      {home.description}
                     </p>
                   </div>
                   <div className="flex flex-col gap-3 sm:flex-row">
@@ -50,7 +49,7 @@ export default function HomePage() {
                       className="rounded-full bg-cyan-200 text-slate-950 hover:bg-cyan-100"
                     >
                       <Link href="/resources">
-                        浏览产业导航
+                        {home.primaryCta}
                         <ArrowRight className="size-4" />
                       </Link>
                     </Button>
@@ -59,11 +58,11 @@ export default function HomePage() {
                       variant="outline"
                       className="rounded-full border-white/15 bg-white/5 text-white hover:bg-white/10"
                     >
-                      <Link href="/news">查看今日信号</Link>
+                      <Link href="/news">{home.secondaryCta}</Link>
                     </Button>
                   </div>
                   <div className="grid gap-2 rounded-lg border border-white/10 bg-slate-950/60 p-3 sm:grid-cols-3">
-                    {searchHints.map((hint) => (
+                    {content.searchHints.map((hint) => (
                       <div
                         key={hint.label}
                         className="flex items-center gap-2 rounded-md bg-white/[0.04] px-3 py-2 text-sm text-slate-300"
@@ -74,12 +73,16 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
-                <RobotSplineHero />
+                <RobotSplineHero
+                  eyebrow={home.robotEyebrow}
+                  title={home.robotTitle}
+                  meta={home.robotMeta}
+                />
               </div>
             </section>
 
             <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {platformStats.map((stat) => (
+              {content.platformStats.map((stat) => (
                 <Card
                   key={stat.label}
                   className="border-white/10 bg-white/[0.04] py-0 shadow-none"
@@ -101,30 +104,37 @@ export default function HomePage() {
 
             <section className="flex flex-col gap-5">
               <SectionHeading
-                eyebrow="Platform Map"
-                title="产业智库模块"
-                description="首页是机器人产业导航图。资讯只是其中一个入口，真正的价值来自结构化公司、融资、论文、数据和资源沉淀。"
+                eyebrow={home.moduleEyebrow}
+                title={home.moduleTitle}
+                description={home.moduleDescription}
               />
               <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                {platformModules.map((module) => (
-                  <ModuleCard key={module.href} {...module} />
+                {content.platformModules.map((module) => (
+                  <ModuleCard
+                    key={module.href}
+                    {...module}
+                    actionLabel={home.moduleAction}
+                  />
                 ))}
               </div>
             </section>
           </div>
 
           <aside className="flex flex-col gap-4">
-            <SignalList />
-            <HotTerms />
+            <SignalList
+              title={home.latestTitle}
+              signals={content.latestSignals}
+            />
+            <HotTerms title={home.hotTermsTitle} terms={content.hotTerms} />
             <Card className="border-white/10 bg-gradient-to-br from-cyan-200/10 to-amber-200/10 py-0 shadow-none">
               <CardHeader className="px-5 pt-5">
                 <CardTitle className="flex items-center gap-2 text-base text-white">
                   <Sparkles className="size-4 text-cyan-200" />
-                  AI 助手预览
+                  {home.aiPreviewTitle}
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col gap-3 px-5 pb-5">
-                {assistantPrompts.slice(0, 2).map((item) => (
+                {content.assistantPrompts.slice(0, 2).map((item) => (
                   <Link
                     key={item.prompt}
                     href="/ai"

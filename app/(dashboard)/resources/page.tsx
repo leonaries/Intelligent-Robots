@@ -2,19 +2,24 @@ import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { PageShell } from '@/components/page-shell';
 import { SectionHeading } from '@/components/section-heading';
-import { resourceCategories, resources } from '@/lib/data/robotics';
+import { getRoboticsContent } from '@/lib/data/robotics';
+import { getLocale } from '@/lib/i18n/config';
 
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
+  const locale = await getLocale();
+  const content = getRoboticsContent(locale);
+  const page = content.pages.resources;
+
   return (
     <PageShell>
       <main className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Resource Map"
-          title="机器人产业资源导航"
-          description="把导航站能力放在单独模块中：公司、零部件、实验室、开源项目、数据集、会议、媒体社区和投资机构。"
+          eyebrow={page.eyebrow}
+          title={page.title}
+          description={page.description}
         />
         <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {resourceCategories.map((category) => (
+          {content.resourceCategories.map((category) => (
             <div
               key={category.name}
               className="rounded-lg border border-white/10 bg-white/[0.04] p-5"
@@ -22,13 +27,13 @@ export default function ResourcesPage() {
               <category.icon className="mb-4 size-5 text-cyan-200" />
               <h2 className="font-semibold text-white">{category.name}</h2>
               <p className="mt-2 text-sm text-slate-400">
-                {category.count}+ 个已整理资源
+                {category.count}+ {content.labels.itemsOrganized}
               </p>
             </div>
           ))}
         </section>
         <section className="grid gap-4 lg:grid-cols-3">
-          {resources.map((resource) => (
+          {content.resources.map((resource) => (
             <article
               key={resource.name}
               className="rounded-lg border border-white/10 bg-white/[0.04] p-5"
@@ -57,7 +62,7 @@ export default function ResourcesPage() {
                 target="_blank"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-cyan-100"
               >
-                访问资源
+                {content.labels.visitResource}
                 <ExternalLink className="size-4" />
               </Link>
             </article>

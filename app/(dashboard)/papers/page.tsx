@@ -1,18 +1,23 @@
 import { PageShell } from '@/components/page-shell';
 import { SectionHeading } from '@/components/section-heading';
-import { papers } from '@/lib/data/robotics';
+import { getRoboticsContent } from '@/lib/data/robotics';
+import { getLocale } from '@/lib/i18n/config';
 
-export default function PapersPage() {
+export default async function PapersPage() {
+  const locale = await getLocale();
+  const content = getRoboticsContent(locale);
+  const page = content.pages.papers;
+
   return (
     <PageShell>
       <main className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Paper Radar"
-          title="技术论文"
-          description="聚合机器人学习、VLA、运动控制、操作、感知和数据集方向论文，提供中文解读入口。"
+          eyebrow={page.eyebrow}
+          title={page.title}
+          description={page.description}
         />
         <section className="grid gap-4">
-          {papers.map((paper) => (
+          {content.papers.map((paper) => (
             <article
               key={paper.title}
               className="rounded-lg border border-white/10 bg-white/[0.04] p-5"

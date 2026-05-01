@@ -15,6 +15,7 @@ type ModuleCardProps = {
   href: string;
   meta: string;
   icon: LucideIcon;
+  actionLabel: string;
 };
 
 export function ModuleCard({
@@ -22,7 +23,8 @@ export function ModuleCard({
   description,
   href,
   meta,
-  icon: Icon
+  icon: Icon,
+  actionLabel
 }: ModuleCardProps) {
   return (
     <Card className="group border-white/10 bg-white/[0.04] py-0 shadow-none transition hover:border-cyan-200/40 hover:bg-white/[0.07]">
@@ -45,7 +47,7 @@ export function ModuleCard({
           href={href}
           className="inline-flex items-center gap-2 text-sm font-medium text-cyan-100 transition group-hover:gap-3"
         >
-          进入模块
+          {actionLabel}
           <ArrowRight className="size-4" />
         </Link>
       </CardFooter>

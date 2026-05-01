@@ -1,15 +1,22 @@
-import { hotTerms } from '@/lib/data/robotics';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-export function HotTerms() {
+type HotTermsProps = {
+  title: string;
+  terms: {
+    term: string;
+    count: number;
+  }[];
+};
+
+export function HotTerms({ title, terms }: HotTermsProps) {
   return (
     <Card className="border-white/10 bg-white/[0.04] py-0 shadow-none">
       <CardHeader className="border-b border-white/10 px-5 py-4">
-        <CardTitle className="text-base text-white">本周热词</CardTitle>
+        <CardTitle className="text-base text-white">{title}</CardTitle>
       </CardHeader>
       <CardContent className="px-5 py-4">
         <div className="flex flex-col gap-3">
-          {hotTerms.map((item, index) => (
+          {terms.map((item, index) => (
             <div
               key={item.term}
               className="grid grid-cols-[2rem_1fr_3rem] items-center gap-3 text-sm"

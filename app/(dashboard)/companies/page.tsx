@@ -1,18 +1,23 @@
 import { PageShell } from '@/components/page-shell';
 import { SectionHeading } from '@/components/section-heading';
-import { companies } from '@/lib/data/robotics';
+import { getRoboticsContent } from '@/lib/data/robotics';
+import { getLocale } from '@/lib/i18n/config';
 
-export default function CompaniesPage() {
+export default async function CompaniesPage() {
+  const locale = await getLocale();
+  const content = getRoboticsContent(locale);
+  const page = content.pages.companies;
+
   return (
     <PageShell>
       <main className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Company Graph"
-          title="公司数据库"
-          description="第一版展示种子企业档案，后续接入 Drizzle 表后支持筛选、详情页、融资关联和生态关系图。"
+          eyebrow={page.eyebrow}
+          title={page.title}
+          description={page.description}
         />
         <section className="grid gap-4 lg:grid-cols-2">
-          {companies.map((company) => (
+          {content.companies.map((company) => (
             <article
               key={company.name}
               className="rounded-lg border border-white/10 bg-white/[0.04] p-5"
@@ -32,11 +37,11 @@ export default function CompaniesPage() {
               </div>
               <div className="mt-4 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
                 <div>
-                  <span className="text-slate-500">地区</span>
+                  <span className="text-slate-500">{content.labels.location}</span>
                   <div>{company.location}</div>
                 </div>
                 <div>
-                  <span className="text-slate-500">方向</span>
+                  <span className="text-slate-500">{content.labels.focus}</span>
                   <div>{company.focus}</div>
                 </div>
               </div>

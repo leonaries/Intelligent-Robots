@@ -1,14 +1,24 @@
-import { latestSignals } from '@/lib/data/robotics';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-export function SignalList() {
+type SignalListProps = {
+  title: string;
+  signals: {
+    title: string;
+    category: string;
+    source: string;
+    time: string;
+    summary: string;
+  }[];
+};
+
+export function SignalList({ title, signals }: SignalListProps) {
   return (
     <Card className="border-white/10 bg-white/[0.04] py-0 shadow-none">
       <CardHeader className="border-b border-white/10 px-5 py-4">
-        <CardTitle className="text-base text-white">最新行业资讯</CardTitle>
+        <CardTitle className="text-base text-white">{title}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col px-5 py-0">
-        {latestSignals.map((signal) => (
+        {signals.map((signal) => (
           <article
             key={signal.title}
             className="border-b border-white/10 py-4 last:border-b-0"
