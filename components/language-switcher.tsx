@@ -41,7 +41,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
     >
       <Globe2 className="size-4" />
       <span className="hidden sm:inline">
-        {optimisticLocale === 'zh' ? 'EN' : '中'}
+        {optimisticLocale === 'zh' ? 'EN' : 'CN'}
       </span>
     </Button>
   );
