@@ -28,7 +28,7 @@ export function LanguageSwitcher({ locale }: LanguageSwitcherProps) {
     <Button
       type="button"
       variant="outline"
-      className="rounded-full border-white/15 bg-white/5 px-3 text-white hover:bg-white/10"
+      className="rounded-full border-white/15 bg-white/5 px-3 text-cyan-100 shadow-none hover:border-cyan-200/40 hover:bg-cyan-200/10 hover:text-cyan-50 focus-visible:border-cyan-200/50 focus-visible:ring-cyan-200/30"
       aria-busy={isPending}
       aria-label={optimisticLocale === 'zh' ? 'Switch to English' : '切换到中文'}
       onClick={() => {
