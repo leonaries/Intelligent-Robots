@@ -293,7 +293,9 @@ const roboticsContent = {
       visitResource: '访问资源',
       original: '原文',
       comingSoon: '即将开放',
-      startUsing: '开始使用'
+      startUsing: '开始使用',
+      readFullArticle: '阅读全文',
+      newsImageAlt: '机器人产业资讯配图'
     },
     pages: {
       news: {
@@ -634,7 +636,9 @@ const roboticsContent = {
       visitResource: 'Visit resource',
       original: 'Source',
       comingSoon: 'Coming soon',
-      startUsing: 'Start'
+      startUsing: 'Start',
+      readFullArticle: 'Read the full article',
+      newsImageAlt: 'Robotics industry news image'
     },
     pages: {
       news: {

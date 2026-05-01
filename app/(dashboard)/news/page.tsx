@@ -1,6 +1,7 @@
 import { PageShell } from '@/components/page-shell';
 import { SectionHeading } from '@/components/section-heading';
 import { HotTerms } from '@/components/hot-terms';
+import { NewsFeatureCard } from '@/components/news-feature-card';
 import { getRoboticsContent } from '@/lib/data/robotics';
 import { getLocale } from '@/lib/i18n/config';
 
@@ -71,37 +72,24 @@ export default async function NewsPage() {
               </span>
             ))}
           </div>
-          <div className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 text-sm">
-              <span className="text-white">{page.streamTitle}</span>
-              <span className="text-slate-500">{page.sortLabel}</span>
-            </div>
+          <NewsFeatureCard
+            signal={content.latestSignals[0]}
+            actionLabel={content.labels.readFullArticle}
+            imageAlt={content.labels.newsImageAlt}
+            variant="featured"
+          />
+
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {content.latestSignals.concat(content.latestSignals).map((signal, index) => (
-              <article
-                key={`${signal.title}-${index}`}
-                className="grid gap-3 border-b border-white/10 p-4 last:border-b-0 md:grid-cols-[88px_1fr_auto]"
-              >
-                <div className="text-xs leading-6 text-slate-500">
-                  {index % 2 === 0 ? '12:29' : '11:54'}
-                  <br />
-                  <span className="font-semibold text-cyan-200">
-                    {signal.category}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white">
-                    {signal.title}
-                  </h3>
-                  <p className="mt-1 text-sm leading-6 text-slate-400">
-                    {signal.summary}
-                  </p>
-                </div>
-                <button className="h-fit rounded-md border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-200">
-                  {content.labels.original}
-                </button>
-              </article>
+              <NewsFeatureCard
+                key={`${signal.title}-card-${index}`}
+                signal={signal}
+                actionLabel={content.labels.readFullArticle}
+                imageAlt={content.labels.newsImageAlt}
+              />
             ))}
           </div>
+
         </section>
 
         <aside className="flex flex-col gap-4">
