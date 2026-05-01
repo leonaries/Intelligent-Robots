@@ -6,6 +6,9 @@ import { cn } from '@/lib/utils';
 
 const ROBOTICS_SCENE =
   'https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode';
+const TITLE_TYPING_SPEED_MS = 42;
+const META_TYPING_SPEED_MS = 34;
+const META_TYPING_DELAY_MS = 280;
 
 type NavigatorWithConnection = Navigator & {
   connection?: {
@@ -31,6 +34,9 @@ export function RobotSplineHero({
   const [shouldRenderScene, setShouldRenderScene] = useState<boolean | null>(
     null
   );
+  const [typedTitle, setTypedTitle] = useState('');
+  const [typedMeta, setTypedMeta] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
     const wideViewport = window.matchMedia('(min-width: 1024px)');
@@ -42,6 +48,61 @@ export function RobotSplineHero({
       wideViewport.matches && !reducedMotion.matches && !saveData
     );
   }, []);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+      .matches;
+
+    if (reducedMotion) {
+      setTypedTitle(title);
+      setTypedMeta(meta);
+      setIsTyping(false);
+      return;
+    }
+
+    let titleIndex = 0;
+    let metaIndex = 0;
+    let titleInterval: number | undefined;
+    let metaInterval: number | undefined;
+    let metaTimeout: number | undefined;
+
+    setTypedTitle('');
+    setTypedMeta('');
+    setIsTyping(true);
+
+    titleInterval = window.setInterval(() => {
+      titleIndex += 1;
+      setTypedTitle(title.slice(0, titleIndex));
+
+      if (titleIndex >= title.length) {
+        window.clearInterval(titleInterval);
+
+        metaTimeout = window.setTimeout(() => {
+          metaInterval = window.setInterval(() => {
+            metaIndex += 1;
+            setTypedMeta(meta.slice(0, metaIndex));
+
+            if (metaIndex >= meta.length) {
+              window.clearInterval(metaInterval);
+              setIsTyping(false);
+            }
+          }, META_TYPING_SPEED_MS);
+        }, META_TYPING_DELAY_MS);
+      }
+    }, TITLE_TYPING_SPEED_MS);
+
+    return () => {
+      if (titleInterval) {
+        window.clearInterval(titleInterval);
+      }
+      if (metaTimeout) {
+        window.clearTimeout(metaTimeout);
+      }
+      if (metaInterval) {
+        window.clearInterval(metaInterval);
+      }
+    };
+  }, [meta, title]);
 
   return (
     <div
@@ -76,10 +137,19 @@ export function RobotSplineHero({
         <div className="flex items-center justify-between gap-3">
           <div>
             <div className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100">
-              {title}
+              {typedTitle}
+              {isTyping && typedMeta.length === 0 ? (
+                <span className="ml-0.5 inline-block h-3 w-px translate-y-0.5 animate-pulse bg-cyan-100" />
+              ) : null}
             </div>
-            <div className="mt-1 text-sm text-slate-300">
-              {meta}
+            <div
+              className="mt-1 min-h-5 text-sm text-slate-300"
+              aria-label={`${title} ${meta}`}
+            >
+              {typedMeta}
+              {isTyping && typedMeta.length > 0 ? (
+                <span className="ml-0.5 inline-block h-4 w-px translate-y-0.5 animate-pulse bg-slate-300" />
+              ) : null}
             </div>
           </div>
           <div className="grid size-11 place-items-center rounded-full border border-cyan-200/25 bg-cyan-200/10">
