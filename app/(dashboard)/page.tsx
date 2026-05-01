@@ -72,6 +72,7 @@ export default async function HomePage() {
                   eyebrow={home.robotEyebrow}
                   title={home.robotTitle}
                   meta={home.robotMeta}
+                  fallbackAlt={home.robotFallbackAlt}
                 />
               </div>
             </section>

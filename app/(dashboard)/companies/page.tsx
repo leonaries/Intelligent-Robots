@@ -27,9 +27,6 @@ export default async function CompaniesPage() {
                   <h2 className="text-xl font-semibold text-white">
                     {company.name}
                   </h2>
-                  <p className="mt-1 text-sm text-slate-500">
-                    {company.englishName}
-                  </p>
                 </div>
                 <span className="rounded-full border border-cyan-200/20 bg-cyan-200/10 px-3 py-1 text-xs text-cyan-100">
                   {company.stage}

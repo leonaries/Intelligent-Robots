@@ -18,13 +18,15 @@ type RobotSplineHeroProps = {
   eyebrow: string;
   title: string;
   meta: string;
+  fallbackAlt: string;
 };
 
 export function RobotSplineHero({
   className,
   eyebrow,
   title,
-  meta
+  meta,
+  fallbackAlt
 }: RobotSplineHeroProps) {
   const [shouldRenderScene, setShouldRenderScene] = useState<boolean | null>(
     null
@@ -51,7 +53,7 @@ export function RobotSplineHero({
       {shouldRenderScene === false ? (
         <img
           src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=85"
-          alt="机器人与未来科技场景"
+          alt={fallbackAlt}
           className="absolute inset-0 h-full w-full object-cover opacity-75 grayscale-[15%]"
         />
       ) : null}

@@ -20,7 +20,7 @@ import type { Locale } from '@/lib/i18n/settings';
 const roboticsContent = {
   zh: {
     brand: '机器人产业智库',
-    tagline: 'Robotics Intelligence Platform',
+    tagline: '',
     header: {
       dashboard: '控制台'
     },
@@ -34,22 +34,23 @@ const roboticsContent = {
       { label: '资源导航', href: '/resources' }
     ],
     home: {
-      badge: 'Robotics Intelligence Infrastructure',
+      badge: '机器人产业情报基础设施',
       title: ['机器人产业智库', '导航入口'],
       description:
         '汇聚全球机器人行业资讯、企业档案、投融资事件、技术论文、产业指标和资源导航，帮助创业者、投资人和工程师快速进入产业地图。',
       primaryCta: '浏览产业导航',
       secondaryCta: '查看今日信号',
-      moduleEyebrow: 'Platform Map',
+      moduleEyebrow: '平台地图',
       moduleTitle: '产业智库模块',
       moduleDescription:
         '首页是机器人产业导航图。资讯只是其中一个入口，真正的价值来自结构化公司、融资、论文、数据和资源沉淀。',
       moduleAction: '进入模块',
       latestTitle: '最新行业资讯',
       hotTermsTitle: '本周热词',
-      robotEyebrow: 'Embodied AI Map',
-      robotTitle: 'Robotics Watch',
-      robotMeta: 'Companies · Funding · Papers · Signals'
+      robotEyebrow: '具身智能地图',
+      robotTitle: '机器人产业观察',
+      robotMeta: '公司 · 融资 · 论文 · 信号',
+      robotFallbackAlt: '机器人与未来科技场景'
     },
     platformStats: [
       { label: '收录企业', value: '200+', detail: '人形、四足、零部件、服务机器人' },
@@ -62,42 +63,42 @@ const roboticsContent = {
         title: '行业资讯',
         description: '实时捕获机器人新闻、社媒信号、政策与公司动态，形成每日洞察和热词趋势。',
         href: '/news',
-        meta: 'Signal Feed',
+        meta: '信号流',
         icon: Radio
       },
       {
         title: '公司数据库',
         description: '沉淀企业档案、产品路线、融资阶段、地区分布、团队背景和生态关系。',
         href: '/companies',
-        meta: 'Company Graph',
+        meta: '公司图谱',
         icon: Building2
       },
       {
         title: '投融资数据库',
         description: '追踪融资轮次、金额、估值、投资机构、历史事件和赛道热度。',
         href: '/funding',
-        meta: 'Funding Intel',
+        meta: '融资情报',
         icon: CircleDollarSign
       },
       {
         title: '技术论文',
         description: '聚合 VLA、控制、操作、感知、运动和数据集论文，提供中文解读。',
         href: '/papers',
-        meta: 'Paper Radar',
+        meta: '论文雷达',
         icon: FileText
       },
       {
         title: '产业数据',
         description: '整理出货量、成本结构、关键零部件、政策地图与市场规模指标。',
         href: '/data',
-        meta: 'Market Data',
+        meta: '市场数据',
         icon: BarChart3
       },
       {
         title: '资源导航',
         description: '导航机器人公司、实验室、开源项目、数据集、供应链、会议和社区。',
         href: '/resources',
-        meta: 'Resource Map',
+        meta: '资源地图',
         icon: Network
       }
     ],
@@ -116,7 +117,7 @@ const roboticsContent = {
         source: '论文雷达',
         time: '今日 11:54',
         summary: '多任务操作、跨平台数据和真实环境泛化仍是技术路线讨论的重点。',
-        tags: ['VLA', 'Manipulation', '具身智能']
+        tags: ['VLA', '机器人操作', '具身智能']
       },
       {
         title: '具身智能融资继续向头部企业集中',
@@ -170,7 +171,7 @@ const roboticsContent = {
         stage: 'Series C',
         focus: '人形机器人',
         description: '美国人形机器人代表公司之一，围绕商业交付、数据闭环和RaaS模式推进。',
-        tags: ['Humanoid', 'RaaS', '海外公司']
+        tags: ['人形机器人', '机器人即服务', '海外公司']
       }
     ],
     fundingEvents: [
@@ -213,27 +214,27 @@ const roboticsContent = {
         authors: 'Kevin Black, Noah Brown, Danny Driess',
         venue: 'arXiv / RSS 2025',
         date: '2024/10/31',
-        direction: 'manipulation',
+        direction: '机器人操作',
         summary: '通用机器人基础模型，基于预训练VLM和流匹配架构，在多平台真实任务上展现泛化能力。',
-        tags: ['VLA', 'flow matching', 'manipulation']
+        tags: ['VLA', '流匹配', '机器人操作']
       },
       {
         title: 'OpenVLA: An Open-Source Vision-Language-Action Model',
         authors: 'Moo Jin Kim, Karl Pertsch, Siddharth Karamcheti',
         venue: 'CoRL 2024',
         date: '2024/6/13',
-        direction: 'manipulation',
+        direction: '机器人操作',
         summary: '开源 7B 参数 VLA 模型，支持消费级 GPU 微调和量化部署。',
-        tags: ['VLA', 'open-source', 'robot learning']
+        tags: ['VLA', '开源模型', '机器人学习']
       },
       {
         title: 'Open X-Embodiment: Robotic Learning Datasets and RT-X Models',
         authors: 'Open X-Embodiment Collaboration',
         venue: 'ICRA 2024 Best Paper',
         date: '2024/5/13',
-        direction: 'learning',
+        direction: '机器人学习',
         summary: '跨机器人形态的大规模学习数据集，验证多具身形态数据联合训练的价值。',
-        tags: ['dataset', 'RT-X', 'cross-embodiment']
+        tags: ['数据集', 'RT-X', '跨具身形态']
       }
     ],
     metrics: [
@@ -258,26 +259,26 @@ const roboticsContent = {
         category: '数据集',
         description: '跨机器人形态的真实机器人学习数据集。',
         url: 'https://robotics-transformer-x.github.io/',
-        tags: ['dataset', 'robot learning']
+        tags: ['数据集', '机器人学习']
       },
       {
         name: 'OpenVLA',
         category: '开源项目',
         description: '面向通用机器人控制的开源 VLA 模型。',
         url: 'https://openvla.github.io/',
-        tags: ['VLA', 'open-source']
+        tags: ['VLA', '开源模型']
       },
       {
         name: 'ICRA',
         category: '会议与活动',
         description: '机器人与自动化领域旗舰会议之一。',
         url: 'https://www.ieee-ras.org/conferences-workshops/fully-sponsored/icra',
-        tags: ['conference', 'research']
+        tags: ['学术会议', '研究']
       }
     ],
     searchHints: [
-      { label: 'Search companies', icon: Search },
-      { label: 'Track funding', icon: Activity }
+      { label: '搜索公司', icon: Search },
+      { label: '追踪融资', icon: Activity }
     ],
     labels: {
       location: '地区',
@@ -296,7 +297,7 @@ const roboticsContent = {
     },
     pages: {
       news: {
-        eyebrow: 'Live Signal Feed',
+        eyebrow: '实时信号流',
         title: '行业资讯',
         description: '按照 AI Signal 的信息流方式组织机器人产业信号，但组件风格保持产业智库的一致视觉。',
         filters: ['全部', '人形机器人', '具身智能', '融资', '供应链', '论文', '政策'],
@@ -306,51 +307,53 @@ const roboticsContent = {
           { title: '本周洞察', body: '融资集中于头部，执行器和真实数据成本升温。' },
           { title: '趋势预判', body: 'VLA 与数据闭环会影响下一阶段竞争。' }
         ],
-        searchPlaceholder: 'Search signals',
+        searchPlaceholder: '搜索产业信号',
         streamTitle: '信号流 · 今日 28 条',
         sortLabel: '按最新发布'
       },
       resources: {
-        eyebrow: 'Resource Map',
+        eyebrow: '资源地图',
         title: '机器人产业资源导航',
         description: '把导航站能力放在单独模块中：公司、零部件、实验室、开源项目、数据集、会议、媒体社区和投资机构。'
       },
       companies: {
-        eyebrow: 'Company Graph',
+        eyebrow: '公司图谱',
         title: '公司数据库',
         description: '第一版展示种子企业档案，后续接入 Drizzle 表后支持筛选、详情页、融资关联和生态关系图。'
       },
       funding: {
-        eyebrow: 'Funding Intel',
+        eyebrow: '融资情报',
         title: '投融资数据库',
         description: '追踪轮次、金额、估值和投资机构，并与公司数据库和资讯信号关联。'
       },
       papers: {
-        eyebrow: 'Paper Radar',
+        eyebrow: '论文雷达',
         title: '技术论文',
         description: '聚合机器人学习、VLA、运动控制、操作、感知和数据集方向论文，提供中文解读入口。'
       },
       data: {
-        eyebrow: 'Market Data',
+        eyebrow: '市场数据',
         title: '产业数据',
         description: '第一版展示关键指标预览，后续扩展为出货量、成本结构、政策地图、零部件价格和市场规模看板。'
       },
       pricing: {
-        eyebrow: 'Plans',
+        eyebrow: '会员方案',
         title: '会员能力规划',
         description: '模板保留了 Stripe 集成能力。v1 先隐藏真实支付，把价格页作为能力规划展示，等产品数据和权限边界稳定后再开启订阅。'
       }
     },
     plans: [
       {
-        name: 'Research',
-        price: 'Free',
+        name: '研究版',
+        price: '免费',
+        isComingSoon: false,
         description: '适合早期浏览产业导航、资讯和公开数据库。',
         features: ['公开行业资讯', '资源导航', '公司/论文/融资预览', '研究工作流预览']
       },
       {
-        name: 'Intelligence',
-        price: 'Soon',
+        name: '情报版',
+        price: '即将开放',
+        isComingSoon: true,
         description: '面向需要深度数据库、收藏、监控和研究工作流的团队。',
         features: ['高级筛选与导出', '企业收藏与监控', '融资与论文提醒', '团队协作与权限']
       }
@@ -387,7 +390,8 @@ const roboticsContent = {
       hotTermsTitle: 'Hot Terms',
       robotEyebrow: 'Embodied AI Map',
       robotTitle: 'Robotics Watch',
-      robotMeta: 'Companies · Funding · Papers · Signals'
+      robotMeta: 'Companies · Funding · Papers · Signals',
+      robotFallbackAlt: 'Robot and future technology scene'
     },
     platformStats: [
       { label: 'Companies', value: '200+', detail: 'Humanoid, quadruped, components, service robotics' },
@@ -683,12 +687,14 @@ const roboticsContent = {
       {
         name: 'Research',
         price: 'Free',
+        isComingSoon: false,
         description: 'For early browsing of resource maps, news, and public databases.',
         features: ['Public industry news', 'Resource map', 'Company/paper/funding previews', 'Research workflow previews']
       },
       {
         name: 'Intelligence',
         price: 'Soon',
+        isComingSoon: true,
         description: 'For teams that need deeper databases, saved views, monitoring, and research workflows.',
         features: ['Advanced filters and export', 'Company watchlists', 'Funding and paper alerts', 'Team collaboration and permissions']
       }

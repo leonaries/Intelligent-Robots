@@ -24,7 +24,7 @@ export default async function NewsPage() {
             >
               <span>{source}</span>
               <span className="text-xs text-slate-500">
-                {index === 5 ? 'soon' : 20 + index * 7}
+                {index === 5 ? content.labels.comingSoon : 20 + index * 7}
               </span>
             </div>
           ))}

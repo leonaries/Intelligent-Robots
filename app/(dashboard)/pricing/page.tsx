@@ -44,9 +44,9 @@ export default async function PricingPage() {
               </ul>
               <Button
                 className="mt-8 w-full rounded-full bg-cyan-200 text-slate-950 hover:bg-cyan-100"
-                disabled={plan.price === 'Soon'}
+                disabled={plan.isComingSoon}
               >
-                {plan.price === 'Soon'
+                {plan.isComingSoon
                   ? content.labels.comingSoon
                   : content.labels.startUsing}
               </Button>

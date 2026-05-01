@@ -21,9 +21,11 @@ export async function PublicHeader() {
             <div className="truncate text-base font-semibold tracking-wide text-white">
               {content.brand}
             </div>
-            <div className="truncate text-xs text-slate-400">
-              {content.tagline}
-            </div>
+            {content.tagline ? (
+              <div className="truncate text-xs text-slate-400">
+                {content.tagline}
+              </div>
+            ) : null}
           </div>
         </Link>
 

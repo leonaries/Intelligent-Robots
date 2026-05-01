@@ -52,6 +52,7 @@ export function LivePresence({ locale }: LivePresenceProps) {
 
     return locale === 'zh' ? `${online} 人在线` : `${online} online`;
   }, [isConnected, locale, online]);
+  const statusLabel = locale === 'zh' ? '实时' : 'Live';
 
   useEffect(() => {
     let isMounted = true;
@@ -110,7 +111,7 @@ export function LivePresence({ locale }: LivePresenceProps) {
       />
       <Activity className="size-3.5 text-cyan-200" />
       <span className="font-semibold uppercase tracking-[0.16em] text-cyan-100">
-        Live
+        {statusLabel}
       </span>
       <span>{label}</span>
     </div>
