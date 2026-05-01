@@ -34,7 +34,7 @@ export function RobotSplineHero({ className }: RobotSplineHeroProps) {
   return (
     <div
       className={cn(
-        'relative min-h-[260px] overflow-hidden border-t border-white/10 bg-[#05080b] lg:min-h-full lg:border-l lg:border-t-0',
+        'relative min-h-[300px] overflow-hidden border-t border-white/10 bg-[#05080b] sm:min-h-[360px] lg:min-h-[620px] lg:border-l lg:border-t-0',
         className
       )}
     >
@@ -52,7 +52,7 @@ export function RobotSplineHero({ className }: RobotSplineHeroProps) {
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#07090b] to-transparent" />
 
       {shouldRenderScene ? (
-        <div className="absolute inset-0 translate-x-8 scale-110 opacity-90">
+        <div className="absolute inset-0 translate-x-10 scale-[1.16] opacity-90 xl:translate-x-12 xl:scale-[1.22]">
           <SplineScene scene={ROBOTICS_SCENE} />
         </div>
       ) : null}

@@ -24,18 +24,20 @@ export default function HomePage() {
   return (
     <PageShell>
       <main>
-        <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-14">
+        <section className="mx-auto grid max-w-[1440px] gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-14">
           <div className="flex flex-col gap-8">
             <section className="overflow-hidden rounded-lg border border-white/10 bg-white/[0.04]">
-              <div className="grid lg:grid-cols-[minmax(0,1fr)_360px]">
-                <div className="flex flex-col justify-center gap-6 p-6 sm:p-8 lg:p-10">
+              <div className="grid lg:grid-cols-[minmax(0,1fr)_440px] xl:grid-cols-[minmax(0,1fr)_500px]">
+                <div className="flex flex-col justify-center gap-6 p-6 sm:p-8 lg:p-9 xl:p-10">
                   <div className="flex w-fit items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-200/10 px-3 py-1 text-xs font-medium text-cyan-100">
                     <span className="size-1.5 rounded-full bg-cyan-200 shadow-[0_0_18px_rgba(103,232,249,0.8)]" />
                     Robotics Intelligence Infrastructure
                   </div>
                   <div className="flex flex-col gap-4">
-                    <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                      面向机器人产业的导航与智库入口
+                    <h1 className="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[48px] xl:text-[52px]">
+                      机器人产业智库
+                      <br />
+                      导航入口
                     </h1>
                     <p className="max-w-3xl text-base leading-7 text-slate-300 sm:text-lg">
                       汇聚全球机器人行业资讯、企业档案、投融资事件、技术论文、产业指标和资源导航，
