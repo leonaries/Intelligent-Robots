@@ -205,22 +205,24 @@ Version one should start from one mature template, then replace its generic SaaS
 - Keep the template's authentication, protected routes, environment conventions, layout primitives, and deployment setup.
 - Keep billing code only if the selected template includes it and it does not slow down v1. Otherwise hide billing routes until needed.
 
-Repository shape after adopting a template:
+Repository shape after adopting the selected template:
 
-- `apps/web`: Next.js frontend.
-- `packages/database`: Prisma or Drizzle schema, migrations, seed data, depending on the selected template.
-- `packages/ui`: shared UI components if needed.
-- `packages/config`: shared TypeScript, ESLint, and formatting config if useful.
-- `apps/api`: optional NestJS backend, deferred until the product needs a separate ingestion service, crawler orchestration, complex background jobs, or public API boundaries.
+- Single Next.js app at the repository root for version one.
+- `app/`: public pages, auth routes, dashboard routes, and API route handlers.
+- `components/`: shadcn/ui primitives and product-specific UI components.
+- `lib/db`: Drizzle schema, migrations, queries, and seed data.
+- `lib/data`: seeded robotics content used by the public v1 pages.
+- Future `apps/api` or monorepo packages are deferred until the product needs a separate ingestion service, crawler orchestration, complex background jobs, or public API boundaries.
 
 Stack:
 
 - Next.js with App Router.
 - Tailwind CSS.
 - PostgreSQL on Neon.
-- Prisma ORM or Drizzle ORM, based on the selected template.
-- Auth.js, Supabase Auth, or Better Auth, based on the selected template.
-- pnpm workspaces.
+- Drizzle ORM.
+- Email/password authentication with JWT cookies from the Next.js SaaS Starter.
+- Stripe integration kept in the template, with paid plans hidden until monetization is ready.
+- pnpm.
 
 First implementation should prioritize a polished frontend shell, authentication-ready structure, database schema, and seeded content. A standalone NestJS API should be added only when it clearly reduces complexity versus Next.js route handlers and server actions.
 
