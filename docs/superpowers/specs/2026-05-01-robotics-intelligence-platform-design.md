@@ -191,24 +191,38 @@ The first implementation can use seeded mock data, but the database schema shoul
 
 ## Technical Architecture
 
-Use a monorepo:
+Use a template-first architecture instead of starting from a blank repository.
+
+Recommended base template:
+
+- Primary choice: Next.js SaaS Starter if we want authentication, dashboard conventions, shadcn/ui-style components, Postgres, Stripe-ready billing, and production SaaS patterns from day one.
+- Lean alternative: Next.js & Prisma Postgres Auth Starter if we want a smaller base with Next.js, Auth.js, Prisma, Postgres, migrations, seed data, CRUD examples, pagination, filtering, and relation query examples.
+
+Version one should start from one mature template, then replace its generic SaaS domain with the robotics intelligence platform:
+
+- Replace landing/dashboard content with robotics industry navigation and intelligence modules.
+- Replace example data models with robotics entities.
+- Keep the template's authentication, protected routes, environment conventions, layout primitives, and deployment setup.
+- Keep billing code only if the selected template includes it and it does not slow down v1. Otherwise hide billing routes until needed.
+
+Repository shape after adopting a template:
 
 - `apps/web`: Next.js frontend.
-- `apps/api`: NestJS backend.
-- `packages/database`: Prisma schema, migrations, seed data.
+- `packages/database`: Prisma or Drizzle schema, migrations, seed data, depending on the selected template.
 - `packages/ui`: shared UI components if needed.
 - `packages/config`: shared TypeScript, ESLint, and formatting config if useful.
+- `apps/api`: optional NestJS backend, deferred until the product needs a separate ingestion service, crawler orchestration, complex background jobs, or public API boundaries.
 
 Stack:
 
 - Next.js with App Router.
 - Tailwind CSS.
-- NestJS REST API.
 - PostgreSQL on Neon.
-- Prisma ORM.
+- Prisma ORM or Drizzle ORM, based on the selected template.
+- Auth.js, Supabase Auth, or Better Auth, based on the selected template.
 - pnpm workspaces.
 
-First implementation should prioritize a polished frontend shell and seeded content. Backend APIs can be added immediately after the schema is stable.
+First implementation should prioritize a polished frontend shell, authentication-ready structure, database schema, and seeded content. A standalone NestJS API should be added only when it clearly reduces complexity versus Next.js route handlers and server actions.
 
 ## Initial Pages
 
