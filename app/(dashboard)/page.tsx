@@ -10,6 +10,7 @@ import {
 import { HotTerms } from '@/components/hot-terms';
 import { ModuleCard } from '@/components/module-card';
 import { PageShell } from '@/components/page-shell';
+import { RobotSplineHero } from '@/components/robot-spline-hero';
 import { SectionHeading } from '@/components/section-heading';
 import { SignalList } from '@/components/signal-list';
 import {
@@ -71,17 +72,7 @@ export default function HomePage() {
                     ))}
                   </div>
                 </div>
-                <div className="relative min-h-[260px] border-t border-white/10 lg:border-l lg:border-t-0">
-                  <img
-                    src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=85"
-                    alt="机器人与未来科技场景"
-                    className="object-cover opacity-80 grayscale-[15%]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07090b] via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 rounded-md border border-cyan-200/30 bg-slate-950/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100">
-                    Robotics Watch
-                  </div>
-                </div>
+                <RobotSplineHero />
               </div>
             </section>
 
