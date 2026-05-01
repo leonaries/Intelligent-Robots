@@ -29,7 +29,7 @@ export default async function HomePage() {
                     {home.badge}
                   </div>
                   <div className="flex flex-col gap-4">
-                    <h1 className="max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[48px] xl:text-[52px]">
+                    <h1 className="max-w-3xl text-[34px] font-semibold leading-[1.12] tracking-tight text-white sm:text-[40px] lg:text-[42px] xl:text-[46px]">
                       {home.title[0]}
                       <br />
                       {home.title[1]}
